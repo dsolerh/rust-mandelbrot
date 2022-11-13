@@ -10,7 +10,7 @@ use std::str::FromStr;
 ///
 /// If `s` has the proper form, return `Some<(x, y)>`. If it doesn't parse
 /// correctly return `None`.
-fn parse_pair<T: FromStr>(s: &str, separator: char) -> Option<(T, T)> {
+pub fn parse_pair<T: FromStr>(s: &str, separator: char) -> Option<(T, T)> {
     match s.find(separator) {
         None => None,
         Some(index) => match (T::from_str(&s[..index]), T::from_str(&s[index + 1..])) {
