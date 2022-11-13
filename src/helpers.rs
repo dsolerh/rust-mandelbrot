@@ -69,7 +69,7 @@ fn test_pixel_to_point() {
 /// which holds one grayscale pixel per byte. The `upper_left` and `lower_right`
 /// arguments specify points on the complex plane corresponding to the upper-left
 /// and lower-right corners of the pixel buffer.
-fn render(
+pub fn render(
     pixels: &mut [u8],
     bounds: (usize, usize),
     upper_left: Complex<f64>,
@@ -90,7 +90,7 @@ fn render(
 
 /// Write the buffer `pixels`, whose dimentions are given by `bounds`, to the
 /// file named `filename`.
-fn write_image(
+pub fn write_image(
     filename: &str,
     pixels: &[u8],
     bounds: (usize, usize),
